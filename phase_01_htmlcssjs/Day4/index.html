@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:#f5f5f5;
+    }
+        #container{
+            /* border: 2px solid black; */
+            height: auto;
+            width: 250px;
+            text-align: center;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .h3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        button{
+        padding:10px 18px;
+        font-size:22px;
+        cursor:pointer;
+        color:white;
+    transition:0.3s;
+        
+    }
+    button:hover{
+        background-color: aliceblue;
+        border-radius: 5px;
+        background:#f5f8f5;
+    box-shadow:0 0 10px #e8f779,
+               0 0 20px #eff68c,
+               0 0 40px #ecf996;
+    }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img">
+            <img height="150px" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUN8wwSHRl7b_4rsHayInVYYlbCrIi-OJZvPHNklKVeg&s=10" alt="no image">
+            <h3 class="h3">King Khan</h3>
+            <div class="btn">
+                <button id="like">👍</button>
+                <h3>Likes : <span id="likeCount">0</span> </h3>
+            </div>
+            <div class="btn">
+                <button id="dislike">👎</button>
+                <h3>Dislikes : <span id="dislikeCount">0</span>  </h3>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+<script>
+    var likebtn=document.querySelector("#like")
+    var count=0;
+    likebtn.addEventListener("click",function(){
+        // alert("button is triggered")
+        count++;
+
+        var likeCount=document.querySelector("#likeCount")
+        likeCount.innerText=count;
+
+        likeCount.style.color="green"
+    })
+
+
+    var dislikebtn=document.querySelector("#dislike")
+    var dcount=0;
+    dislikebtn.addEventListener("click",function(){
+        dcount++;
+        var dislikeCount=document.querySelector("#dislikeCount")
+        dislikeCount.innerText=dcount;
+
+        dislikeCount.style.color="red"
+    })
+</script>

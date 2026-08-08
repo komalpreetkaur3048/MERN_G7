@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            padding: 10px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #hidedata{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="container">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="" id="name"><br>
+            
+        </div>
+        <div>
+             <label for="mail">Email:</label>
+            <input type="text" name="" id="mail"><br>
+            
+        </div>
+        <div>
+             <label for="Age">Age:</label>
+            <input type="text" name="" id="age"><br>
+            
+        </div>
+        <div><button id="submit">Submit</button></div>
+    </form>
+    <div id="hidedata">
+        <h1>Student Data</h1>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody id="tableContent">
+                <!-- <tr>
+                    <td>Aman</td>
+                    <td>aman@gmail.com</td>
+                    <td>19</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+<script>
+    var btn=document.querySelector("#submit")
+    btn.addEventListener("click",function(e){
+        e.preventDefault()
+        // alert("clicked")
+        var name=document.querySelector("#name")
+        var email=document.querySelector("#mail")
+        var age=document.querySelector("#age")
+
+        var nameinput=name.value
+        var mailinput=email.value
+        var ageinput=age.value
+
+        // console.log(nameinput)
+        var showData=document.getElementById("hidedata")
+        showData.style.display="block"
+        var tbody=document.getElementById("tableContent")
+
+        tbody.innerHTML+=`
+        <tr>
+                    <td>${nameinput}</td>
+                    <td>${mailinput}</td>
+                    <td>${ageinput}</td>
+        </tr>
+        `
+        name.value=""
+        email.value=""
+        age.value=""
+        
+
+    })
+</script>

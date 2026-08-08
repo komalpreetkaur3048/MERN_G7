@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Team</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color:#f4f4f4;
+        }
+
+        /* Header Section */
+        .header{
+            background-color:#1e3a8a;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .logo{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            margin-bottom:10px;
+        }
+
+        .header h1{
+            margin-bottom:10px;
+        }
+
+        /* Trainer Section */
+        .container{
+            width:90%;
+            margin:40px auto;
+        }
+
+        .trainer-section{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+        }
+
+        .card{
+            width:300px;
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+        }
+
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:15px;
+            text-align:center;
+        }
+
+        .card-content h2{
+            color:#1e3a8a;
+            margin-bottom:10px;
+        }
+
+        .card-content p{
+            color:#555;
+            line-height:1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Company Header -->
+    <div class="header">
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+             alt="Company Logo"
+             class="logo"> -->
+
+        <h1>TechVision Solutions</h1>
+        <p>Meet Our Professional Trainers</p>
+    </div>
+
+    <!-- Trainers -->
+    <div class="container">
+        <div class="trainer-section">
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                <div class="card-content">
+                    <h2>John Smith</h2>
+                    <p>Senior Java Developer with 10 years of industry experience.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="">
+                <div class="card-content">
+                    <h2>Sarah Johnson</h2>
+                    <p>Expert in Web Development, HTML, CSS, JavaScript and React.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+                <div class="card-content">
+                    <h2>Michael Brown</h2>
+                    <p>Python and Machine Learning Trainer with practical project expertise.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="">
+                <div class="card-content">
+                    <h2>Emily Davis</h2>
+                    <p>Data Science mentor specializing in AI and Analytics.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="">
+                <div class="card-content">
+                    <h2>David Wilson</h2>
+                    <p>Cloud Computing and DevOps trainer with AWS certification.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="">
+                <div class="card-content">
+                    <h2>Olivia Taylor</h2>
+                    <p>UI/UX Design trainer helping students build modern interfaces.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
