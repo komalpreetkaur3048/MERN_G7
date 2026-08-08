@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Eligibility</title>
+
+    <style>
+        input{
+            border:2px solid black;
+        }
+
+        button{
+            width:80px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="age" placeholder="Enter age">
+    <button id="btn">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function () {
+
+            let content = Number(document.getElementById("age").value);
+
+            if (content >= 18) {
+                document.getElementById("result").textContent = "You can vote.";
+            } else {
+                document.getElementById("result").textContent = "You are not eligible for voting.";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

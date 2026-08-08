@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            outline:none;
+        }
+
+        input:focus{
+            border-color:#007bff;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        #message{
+            text-align:center;
+            margin-bottom:15px;
+            font-weight:bold;
+        }
+
+        .error{
+            color:red;
+        }
+
+        .success{
+            color:green;
+        }
+
+        p{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        a{
+            text-decoration:none;
+            color:blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Login</h2>
+
+    <div id="message"></div>
+
+    <form id="loginForm">
+
+        <div class="input-group">
+            <label>Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                required>
+        </div>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <p>
+        New User?
+        <a href="register.html">Register</a>
+    </p>
+
+</div>
+
+<script src="localstorage.js"></script>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+
+    let message = document.getElementById("message");
+
+    message.innerHTML = "";
+    message.className = "";
+
+    // Email Validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)){
+        message.className = "error";
+        message.innerHTML = "Enter a valid email.";
+        return;
+    }
+
+    // Password Validation
+    if(password.length < 6){
+        message.className = "error";
+        message.innerHTML = "Password must be at least 6 characters.";
+        return;
+    }
+
+    // Call function from localstorage.js
+    let result = loginUser(email, password);
+
+    if(result === "success"){
+
+        message.className = "success";
+        message.innerHTML = "Login Successful.";
+
+        setTimeout(function(){
+
+            alert("Welcome " + email);
+
+            // Redirect after login
+            // window.location.href="home.html";
+
+        },1000);
+
+    }
+    else if(result === "notfound"){
+
+        message.className = "error";
+        message.innerHTML = "User does not exist.";
+
+    }
+    else{
+
+        message.className = "error";
+        message.innerHTML = "Incorrect Password.";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+if(current_user&& password.value==current_user.pass){
+    localstorage.setItem("currentuser",json.stringyfy(currentuser))
+}

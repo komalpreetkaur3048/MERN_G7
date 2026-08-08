@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Password</label>
+    <input type="text" name="" id="pwd">
+    <button id="btn">submit</button>
+    <p id="para"></p>
+    
+</body>
+</html>
+<script>
+    let btn=document.getElementById("btn")
+    btn.addEventListener("click",function(){
+        let password=document.getElementById("pwd").value 
+        if(password.length<8){
+            document.getElementById("para").textContent="weak password";
+        }
+        if(password.length<=12 && password.length>=8){
+            document.getElementById("para").textContent="Good password";
+        }
+        if(password.length>12){
+            document.getElementById("para").textContent="Strong password";
+        }
+    })
+</script>

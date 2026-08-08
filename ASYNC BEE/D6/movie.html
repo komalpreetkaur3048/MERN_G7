@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            margin-top: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="card">
+            <div class="card-body" style="width: 500px;">
+                <h3 style="text-align: center;">🎥Movie Watchlist</h3>
+                <div class="input-group flex-nowrap">
+                    <input type="text" id="songvalue">
+                </div>
+                <div style="margin-top: 20px;">
+                    <button onclick="addSong()" type="button" class="btn btn-primary btn-sm">Add Movie</button>
+                    <button onclick="addfav()" type="button" class="btn btn-secondary btn-success">Add Favorite</button>
+                </div>
+            </div>
+            <div id="player">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let songs=[];
+    let player=document.getElementById("player");
+    let songinput=document.getElementById("songvalue")
+
+    let renderSongs=()=>{
+        player.innerHTML="";
+        songs.forEach((el,index)=>{
+            player.innerHTML+=`
+            <p style="border-bottom: 1px solid black"> ${index+1}. ${el} <button onclick="deletesong(${index})">Delete</button></p> 
+            
+            `
+        })
+    }
+    
+    let addSong=()=>{
+        songs.push(songinput.value);
+        renderSongs();
+    }
+
+    let addfav=()=>{
+        songs.splice(1,0,songinput.value);
+        renderSongs();
+    }
+
+
+    let deletesong=(index)=>{
+        songs.splice(index,1);
+        renderSongs();
+    }
+</script>

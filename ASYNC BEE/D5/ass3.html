@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Uasername:</label>
+    <input type="text" name="" id="user">
+    <label for="">Password: </label>
+    <input type="text" name="" id="pwd">
+    <button id="btn">Login</button>
+    <p id="para"></p>
+    
+</body>
+</html>
+<script>
+    let btn=document.getElementById("btn")
+    btn.addEventListener("click",function(){
+        let user=document.getElementById("user").value
+        let pwd=document.getElementById("pwd").value
+        if(user=="aman"&&pwd=="nama"){
+            document.getElementById("para").textContent="Loged in sucessfully";
+        }else{
+            document.getElementById("para").textContent="Invalid username or password";
+        }
+    })
+</script>

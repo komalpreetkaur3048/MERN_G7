@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">a:</label>
+    <input type="text" name="" id="inp1">
+    <label for="">b: </label>
+    <input type="text" name="" id="inp2">
+    <br>
+    <button id="add">Add</button><br>
+    <button id="sub">Subtract</button><br>
+    <button id="mul">Multiply</button><br>
+    <button id="div">Divide</button><br>
+    <button id="clear">clear</button><br>
+    <p id="res"></p>
+    
+</body>
+</html>
+<script>
+    let add=document.getElementById("add")
+    function addition(a,b){
+        return a+b;
+    }
+    add.addEventListener("click",function(){
+        let a=Number(document.getElementById("inp1").value);
+        let b=Number(document.getElementById("inp2").value);
+        document.getElementById("res").textContent=addition(a,b);
+    });
+
+    let sub=document.getElementById("sub")
+    function subtraction(a,b){
+        return a-b;
+    }
+    sub.addEventListener("click",function(){
+        let a=Number(document.getElementById("inp1").value);
+        let b=Number(document.getElementById("inp2").value);
+        document.getElementById("res").textContent=subtraction(a,b);
+    });
+
+    let mul=document.getElementById("mul")
+    function multipy(a,b){
+        return a*b;
+    }
+    mul.addEventListener("click",function(){
+        let a=Number(document.getElementById("inp1").value);
+        let b=Number(document.getElementById("inp2").value);
+        document.getElementById("res").textContent=multipy(a,b);
+    });
+
+    let div=document.getElementById("div")
+    function division(a,b){
+        return a/b;
+    }
+    div.addEventListener("click",function(){
+        let a=Number(document.getElementById("inp1").value);
+        let b=Number(document.getElementById("inp2").value);
+        document.getElementById("res").textContent=console.log(division(a,b));  //this will console value in browser so there will be nothing for textcontent 
+    });
+
+    let clear=document.getElementById("clear")
+    
+    clear.addEventListener("click",function(){
+        document.getElementById("inp1").value="";
+        document.getElementById("inp2").value="";
+    });
+</script>

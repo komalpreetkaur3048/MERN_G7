@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Input</label>
+    <input type="text" name="" id="marks">
+    <button id="btn">submit</button>
+    <p id="para"></p>
+    
+</body>
+</html>
+<script>
+    let btn=document.getElementById("btn")
+    btn.addEventListener("click",function(){
+        let score=Number(document.getElementById("marks").value )
+        if(score>90){
+            document.getElementById("para").textContent="A+";
+            document.getElementById("para").style.color="green";
+        }else if(score>75){
+            document.getElementById("para").textContent="A";
+            document.getElementById("para").style.color="blue";
+        }else if(score>60){
+            document.getElementById("para").textContent="B";
+            document.getElementById("para").style.color="Orange";
+        }else if(score>40){
+            document.getElementById("para").textContent="C";
+            document.getElementById("para").style.color="yellow";
+        }else{
+            document.getElementById("para").textContent="Fail";
+            document.getElementById("para").style.color="red";
+        }
+    })
+</script>

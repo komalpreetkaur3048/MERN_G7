@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h1>Welocme to product page.</h1>
+            <h3>User : </h3>
+            <button onclick="handlelogout()">logout</button>
+        </div>
+        <div id="falseuser">
+
+        </div>
+    
+    </div>
+    
+</body>
+</html>
+<script>
+    let handlelogout=()=>{
+        localstorage.removeItem("isLoggedIn");
+        window.location.reload();
+    }
+</script>

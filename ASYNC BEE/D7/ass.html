@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        font-family: Arial, sans-serif;
+        background:#f2f2f2;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .container{
+        width:350px;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 10px gray;
+    }
+
+    h2{
+        text-align:center;
+    }
+
+    input{
+        width:100%;
+        padding:10px;
+        margin:10px 0;
+        border:1px solid gray;
+        border-radius:5px;
+        box-sizing:border-box;
+    }
+
+    button{
+        width:100%;
+        padding:10px;
+        background:blue;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+
+    .card{
+        margin-top:20px;
+        padding:15px;
+        border:2px solid black;
+        border-radius:10px;
+        background:#e8f4ff;
+        display:none;
+    }
+
+    .card p{
+        margin:8px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registeration</h2>
+        <form onsubmit="showCard(event)">
+        <input type="text" id="name">
+        <input type="text" id="age">
+        <input type="text" id="course">
+        <button type="submit">Submit</button>
+
+    </form>
+    <div class="card" id="card">
+        <h3>Student Profile</h3>
+
+        <p><b>Name:</b> <span id="sname"></span></p>
+
+        <p><b>Age:</b> <span id="sage"></span></p>
+
+        <p><b>Course:</b> <span id="scourse"></span></p>
+    </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    function showCard(event){
+        event.preventDefault();
+
+        let student={
+            name:document.getElementById("name").value,
+            age:document.getElementById("age").value,
+            course:document.getElementById("course").value
+        };
+        document.getElementById("sname").innerHTML=student.name
+        document.getElementById("sage").innerHTML = student.age;
+        document.getElementById("scourse").innerHTML = student.course;
+        document.getElementById("card").style.display = "block";
+    }
+</script>
